@@ -15,6 +15,6 @@ $choice = Read-Host -Prompt "[y/n]"
                     if(Get-AzureADGroupMember -ObjectId $group_id | Where-Object {$_.DisplayName -eq $hostname}){
                        Write-Host "Done!"
                     }else { Write-Host "something went wrong"                   
-     }else { Write-Host 'Operation canceled'
+     }else { Write-Host "Operation canceled"
              }
              } 
