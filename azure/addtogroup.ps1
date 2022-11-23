@@ -9,6 +9,7 @@ $group_name =  Read-Host "Please enter the group name:"
     $group_id = Get-AzureADGroup -SearchString $group_name | Select-Object -Property RefObjectId
 #    Write-Host $group_id  
 Write-Host "$hostname will be added to $group_name" 
+
 $choice = Read-Host -Prompt "[y/n]"
      if ($choice -match "[yY]"){
                  Add-AzureADGroupMember -ObjectId $device_id -RefObjectId $group_id
