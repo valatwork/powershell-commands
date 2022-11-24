@@ -11,11 +11,12 @@ $group_name =  Read-Host "Please enter the group name:"
 Write-Host "$hostname will be added to $group_name" 
 
 $choice = Read-Host -Prompt "[y/n]"
+$nopenopenope = Write-Host "Operation canceled"
      if ($choice -match "[yY]"){
                  Add-AzureADGroupMember -ObjectId $device_id -RefObjectId $group_id
                     if(Get-AzureADGroupMember -ObjectId $group_id | Where-Object {$_.DisplayName -eq $hostname}){
                        Write-Host "Done!"
                     }else { Write-Host "something went wrong"                   
-     }else { Write-Host "Operation canceled"
+     }else { $nopenopenope
              }
              } 
